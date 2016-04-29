@@ -9,7 +9,9 @@ import org.junit.Test;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
+import co.com.barberudem.DAO.LugarDAO;
 import co.com.barberudem.jpa.entities.Lugar;
+import co.com.barberudem.model.LugarDTO;
 
 /**
  * @author Milton
@@ -27,9 +29,10 @@ public class JPALugarDAOTest {
 
     // Se obtiene el servicio que implementa los servicios de la base de datos
     LugarDAO sesionDAO = (LugarDAO) context.getBean(LugarDAO.class);
+    
 
     // Se realiza el insert
-    Lugar lugar = sesionDAO.findLugarByID(1);
+    LugarDTO lugar = sesionDAO.findLugarByID(1);
     System.out.println("Nombre: " + lugar.getName());
     System.out.println("Direccion: " + lugar.getAddress());
   }
