@@ -18,22 +18,15 @@ public class JPALugarDAO implements LugarDAO {
   
 
   public LugarDTO findLugarByID(int lugarId) {
-    Query query = em.createQuery("SELECT l FROM Lugar l WHERE l.id = :lugarId");
+    Query query = em.createQuery("SELECT new co.com.barberudem.model.LugarDTO(l.address, l.description, l.email, l.id, l.lat, l.lng, l.name, l.phone, l.schedule) FROM Lugar l WHERE l.id = :lugarId");
     query.setParameter("lugarId", lugarId);
-    Lugar lugar = (Lugar) query.getSingleResult();
-
-    // Se crea el DTO
-    LugarDTO lugarDTO = new LugarDTO();
-    lugarDTO.setAddress(lugar.getAddress());
-    lugarDTO.setDescription(lugar.getDescription());
-    lugarDTO.setEmail(lugar.getEmail());
-    lugarDTO.setId(lugar.getId());
-    lugarDTO.setLat(lugar.getLat());
-    lugarDTO.setLng(lugar.getLng());
-    lugarDTO.setName(lugar.getName());
-    lugarDTO.setPhone(lugar.getPhone());
-    lugarDTO.setSchedule(lugar.getSchedule());
-
+    LugarDTO lugarDTO = (LugarDTO) query.getSingleResult();
     return lugarDTO;
+  }
+
+
+  public LugarDTO findLugares() {
+    // TODO Auto-generated method stub
+    return null;
   }
 }
