@@ -7,7 +7,6 @@ import javax.persistence.Query;
 import org.springframework.stereotype.Repository;
 
 import co.com.barberudem.DAO.LugarDAO;
-import co.com.barberudem.jpa.entities.Lugar;
 import co.com.barberudem.model.LugarDTO;
 
 @Repository

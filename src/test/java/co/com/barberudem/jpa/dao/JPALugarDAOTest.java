@@ -3,14 +3,10 @@
  */
 package co.com.barberudem.jpa.dao;
 
-import static org.junit.Assert.*;
-
 import org.junit.Test;
-import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 import co.com.barberudem.DAO.LugarDAO;
-import co.com.barberudem.jpa.entities.Lugar;
 import co.com.barberudem.model.LugarDTO;
 
 /**
